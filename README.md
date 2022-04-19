@@ -31,13 +31,11 @@ All model apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessin
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_scratch_acc.png?raw=true)
 
 * **Accuracy**:
-  - Greatest accuracy of Training set: 
-  - Greatest accuracy of Validation set:
+  - Greatest accuracy of Training set: 90%
+  - Greatest accuracy of Validation set: 88%
   
 * **Some problem**:
-  - Overfiting.
-  - Accuracy of validation test is decreasing and Loss of validation test is increasing.
-  - Greatest accuracy: 
+  - The accuracy of Validation set is still small -> I want much more than it.
 
 #### Train Model with Fine Tuning
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_fine_tuning_loss.png?raw=true)
@@ -67,6 +65,7 @@ All model apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessin
   
 * **Some problem**:
   - Not efficient than Fine Tuning but stable converging than Fine Tuning.
+  - The accuracy is still same with Scratch
 
 #### Train Model with Initalize Pretrain
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_initialize_pretrain_loss.png?raw=true)
@@ -78,10 +77,18 @@ All model apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessin
 
 * **Improvement from Scratch**:
   - Not Overfiting.
-  - Accuracy of validation test is increasing and Loss of validation test is decreasing as I want.
+  - The accuracy is better than Scratch
   
 * **Some problem**:
   - Slow and unstable converging.
+ 
+**Greatest of Accuracy and Smallest of Loss**
+| Types | Accuracy of Train  | Accuracy of Validation | Loss of Train | Loss of Validation | 
+| ------- | :---: | :---: | :---: | :---: | 
+| Sratch | 90%  | 88% | 0.3 | 0.45 |
+| Fine Tuning | 99%  | 97% | 0.01 | 0.15 |
+| Pretrain | 90%  | 88% | 0.3 | 0.36 |
+| Initialize Pretrain | 99%  | 97% | 0.01 | 0.1 |
 
 ### Bird With Many Class - 400 class
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_many_class_show.png?raw=true)
@@ -138,3 +145,16 @@ All model apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessin
   - The accuracy of Training set and Validation set is smaller than Scratch.
   - The accuracy of Validation set untably converges.
   - Not efficient than Fine Tuning
+
+
+**Greatest of Accuracy and Smallest of Loss**
+| Types | Accuracy of Train  | Accuracy of Validation | Loss of Train | Loss of Validation | 
+| ------- | :---: | :---: | :---: | :---: | 
+| Sratch | 97%  | 91% | 0.08 | 0.42 |
+| Fine Tuning | 99%  | 97% | 0.01 | 0.23 |
+| Pretrain | 4%  | 6% | 4.65 | 4.45 |
+| Initialize Pretrain | 92%  | 88% | 0.24 | 0.5 |
+
+### Bird With Many Class - 400 class
+![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_many_class_show.png?raw=true)
+![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_many_class_figure.png?raw=true)
