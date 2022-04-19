@@ -27,8 +27,8 @@ All model apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessin
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_show.png?raw=true)
 ![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_figure.png?raw=true)
 #### Train Model with Scratch
-![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/?raw=true)
-![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/raw=true)
+![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_scratch_loss.png?raw=true)
+![alt text](https://github.com/duytran1332002/Transfer_Learning/blob/main/images/bird_little_class_scratch_acc.png?raw=true)
 
 * **Accuracy**:
   - Greatest accuracy of Training set: 
