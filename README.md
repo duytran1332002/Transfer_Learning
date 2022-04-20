@@ -25,9 +25,9 @@
 
 ## About Data
 I used a different kind of data to test the efficiency of Transfer Learning in the training model:
-- Bird with little class (30 classes): use to test the effection of Transfer Learning on the data with **small number of classes**
-- Bird with many classes (400 classes): use to test the effection of Transfer Learning on the data with a l**arge number of classes**
-- Chest X-ray (2 class): use to test the effection of Transfer Learning on the data **not related with imagenet**
+- **Bird with little class (30 classes)**: use to test the effection of Transfer Learning on the data with **small number of classes**
+- **Bird with many classes (400 classes)**: use to test the effection of Transfer Learning on the data with a **large number of classes**
+- **Chest X-ray (2 class)**: use to test the effection of Transfer Learning on the data **not related with imagenet**
 ## Detail of All Models
 All models apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessing, Softmax activation, Sparse Categorical Crossentropy loss, Adam optimizer**.
 I use **Accuracy and Loss** to evaluate the model.
