@@ -31,11 +31,11 @@ I used a different kind of data to test the efficiency of Transfer Learning in t
 ## Detail of All Models
 All models apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessing, Softmax activation, Sparse Categorical Crossentropy loss, Adam optimizer**.
 I use **Accuracy and Loss** to evaluate the model.
-4 Types of models:
-- **Scratch**: get structure of model and train from begining.
-- **Fine Tuning**: get structure and imagenet weights, freeze some first layers and just train some last layers.
-- **Pretrain**: get structure and  and imagenet weights, freeze all and add 1 Dense layers to last and train it.
-- **Initialize Pretrain**: get structure and imagenet weights, use them like initialize parameter for model., do not freeze any layers, just train all models.
+- 4 Types of models:
+  - **Scratch**: get structure of model and train from begining.
+  - **Fine Tuning**: get structure and imagenet weights, freeze some first layers and just train some last layers.
+  - **Pretrain**: get structure and  and imagenet weights, freeze all and add 1 Dense layers to last and train it.
+  - **Initialize Pretrain**: get structure and imagenet weights, use them like initialize parameter for model., do not freeze any layers, just train all models.
 
 | Model | Input | Batch Size | Epochs | Augmentation | Number Layer Fine-Tuning | Last Layers | Learning Rate | Learning Rate Reduction
 | -------------------------------------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
