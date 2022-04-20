@@ -1,4 +1,27 @@
 # Transfer Learning tested in some case
+## Table of Content
+- [**About Data**](#about-data)
+- [**Detail of All Models**](#detail-of-all-models)
+- [**Visual Data and Training Model**](#visual-data-and-training-model)
+  - [**Bird With Little Class - 30 classes**](#bird-with-little-class---30-classes)
+    - [**Train Model with Scratch**](#train-model-with-scratch)
+    - [**Train Model with Fine Tuning**](#train-model-with-fine-tuning)
+    - [**Train Model with Pretrain**](#train-model-with-pretrain)
+    - [**Train Model with Initalize Pretrain**](#train-model-with-initalize-pretrain)
+    - [**Summary**](#summary-greatest-of-accuracy-and-smallest-of-loss)
+  - [**Bird With Many Class - 400 classes**](#bird-with-many-class---400-classes)
+    - [**Train Model with Scratch**](#train-model-with-scratch-1)
+    - [**Train Model with Fine Tuning**](#train-model-with-fine-tuning-1)
+    - [**Train Model with Pretrain**](#train-model-with-pretrain-1)
+    - [**Train Model with Initalize Pretrain**](#train-model-with-initalize-pretrain-1)
+    - [**Summary**](#summary-greatest-of-accuracy-and-smallest-of-loss-1)
+  - [**Chest XAray- 2 classes**](#chest-xaray--2-classes)
+    - [**Train Model with Scratch**](#train-model-with-scratch-2)
+    - [**Train Model with Fine Tuning**](#train-model-with-fine-tuning-2)
+    - [**Train Model with Pretrain**](#train-model-with-pretrain-2)
+    - [**Train Model with Initalize Pretrain**](#train-model-with-initalize-pretrain-2)
+    - [**Summary**](#summary-greatest-of-accuracy-and-smallest-of-loss-2)
+- [**Reference**](#reference)
 
 ## About Data
 I used a different kind of data to test the efficiency of Transfer Learning in the training model:
@@ -8,6 +31,12 @@ I used a different kind of data to test the efficiency of Transfer Learning in t
 ## Detail of All Models
 All models apply some techniques: **MobileNet V2 model, MobileNet V2 preprocessing, Softmax activation, Sparse Categorical Crossentropy loss, Adam optimizer**.
 I use **Accuracy and Loss** to evaluate the model.
+4 Types of models:
+- **Scratch**: get structure of model and train from begining.
+- **Fine Tuning**: get structure and imagenet weights, freeze some first layers and just train some last layers.
+- **Pretrain**: get structure and  and imagenet weights, freeze all and add 1 Dense layers to last and train it.
+- **Initialize Pretrain**: get structure and imagenet weights, use them like initialize parameter for model., do not freeze any layers, just train all models.
+
 | Model | Input | Batch Size | Epochs | Augmentation | Number Layer Fine-Tuning | Last Layers | Learning Rate | Learning Rate Reduction
 | -------------------------------------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Bird with little class train with scratch** | 224x224x3 | 32 | 70 | Yes | 0 | GlobalMaxPooling2D | 1e - 3 | Yes |
@@ -85,7 +114,7 @@ I use **Accuracy and Loss** to evaluate the model.
 * **Some problems**:
   - Slow and unstable converging.
  
-**Greatest of Accuracy and Smallest of Loss**
+#### Summary: **Greatest of Accuracy and Smallest of Loss**
 | Types | Accuracy of Train  | Accuracy of Validation | Loss of Train | Loss of Validation | 
 | ------- | :---: | :---: | :---: | :---: | 
 | Sratch | 90%  | 88% | 0.3 | 0.45 |
@@ -150,7 +179,7 @@ I use **Accuracy and Loss** to evaluate the model.
   - Not efficient than Fine Tuning
 
 
-**Greatest of Accuracy and Smallest of Loss**
+#### Summary: **Greatest of Accuracy and Smallest of Loss**
 | Types | Accuracy of Train  | Accuracy of Validation | Loss of Train | Loss of Validation | 
 | ------- | :---: | :---: | :---: | :---: | 
 | Sratch | 97%  | 91% | 0.08 | 0.42 |
@@ -223,10 +252,13 @@ I use **Accuracy and Loss** to evaluate the model.
 * **Some problems**:
   - The accuracy of the Validation set unstably converges.
   
-**Greatest of Accuracy and Smallest of Loss**
+#### Summary: **Greatest of Accuracy and Smallest of Loss**
 | Types | Accuracy of Train  | Accuracy of Validation | Loss of Train | Loss of Validation | 
 | ------- | :---: | :---: | :---: | :---: | 
 | Sratch | 97%  | 85% | 0.07 | 0.3 |
 | Fine Tuning | 99%  | 95% | 0.02 | 0.39 |
 | Pretrain | 96%  | 93% | 0.09 | 0.19 |
 | Initialize Pretrain | 99%  | 96% | 0.02 | 0.03 |
+
+## Reference
+[Assignment From AI Viet Nam](https://www.facebook.com/aivietnam.edu.vn)
